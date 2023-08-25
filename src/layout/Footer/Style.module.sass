@@ -1,0 +1,42 @@
+@import "../../style/@mixins"
+
+.footer
+    width: 100%
+    min-height: 176px
+    background-color: #1B1B1B
+    color: #FFFFFF
+    padding: 40px 116px 40px 64px
+
+.wrapper
+    display: flex
+    justify-content: space-between
+    box-sizing: border-box
+
+.block
+    display: inline-flex
+    flex-direction: column
+    gap: 8px
+
+.list_column
+    display: inline-flex
+    flex-direction: column
+    gap: 8px
+
+.list_row
+    display: inline-flex
+    gap: 25px
+
+.title
+    @include title
+    font-size: 16px
+    line-height: 32px
+
+.link
+    @include text
+    font-size: 20px
+    line-height: 24px
+
+.text:first-child
+    margin-bottom: 8px
+
+

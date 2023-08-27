@@ -11,6 +11,7 @@ function Header() {
 
   const toggleBurgerMenu = () => {
     setIsOpened((prev) => !prev);
+    document.body.style.overflow = `${isOpened ? '' : 'hidden'}`;
   };
 
   return (

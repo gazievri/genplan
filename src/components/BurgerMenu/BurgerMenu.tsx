@@ -9,6 +9,7 @@ interface IProps {
 function BurgerMenu({ action, isOpened }: IProps) {
   const handleClick = () => {
     action();
+    document.body.style.overflow = '';
   };
 
   return (

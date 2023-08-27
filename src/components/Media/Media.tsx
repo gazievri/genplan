@@ -13,7 +13,7 @@ function MediaBlock({ mediaCards }: IProps) {
         <h2 className={styles.title}>СМИ О СТАЖИРОВКЕ</h2>
         <div className={styles.card_container}>
           {
-            mediaCards.map((card) => <MediaCard card={card} />)
+            mediaCards.map((card) => <MediaCard card={card} key={card.id} />)
           }
         </div>
 

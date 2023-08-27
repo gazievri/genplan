@@ -15,7 +15,7 @@ export function ToTop() {
     }
   }
 
-  window.onscroll = function () {
+  window.onscroll = function scrollFn() {
     scrollFunction();
   };
 

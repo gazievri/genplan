@@ -32,7 +32,7 @@ function App() {
     }).catch((err) => console.log(err));
   };
 
-  useEffect(() => { fetchAboutCards(), fetchMediaCards() }, []);
+  useEffect(() => { fetchAboutCards(); fetchMediaCards(); }, []);
 
   return (
     <>

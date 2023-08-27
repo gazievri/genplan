@@ -1,0 +1,36 @@
+@import "../../style/@mixins"
+
+.section
+    width: 100%
+    min-height: 780px
+    color: #FFFFFF
+    padding-top: 143px
+    position: relative
+    overflow: hidden
+    background-image: url('../../assets/img/bg-hero.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+
+.wrapper
+    max-width: 1440px
+    width: 100%
+    padding: 0 0 0 64px
+    margin: 0 auto
+
+.title
+    @include title
+    font-size: 126px
+    line-height: 97.9%
+    max-width: 1090px
+    margin: 0 0 49px
+
+.subtitle
+    @include title
+    font-size: 22px
+    line-height: 30px
+
+.text
+    @include title
+    font-size: 16px
+    line-height: 26px

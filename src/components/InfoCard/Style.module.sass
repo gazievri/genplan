@@ -2,9 +2,19 @@
 
 .card
     padding: 16px 16px 0 0
+    min-height: 240px
+    position: relative
+
+.card:after
+    position: absolute
+    content: ''
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
     border-top: 2px solid #1B1B1B
     border-right: 2px solid #1B1B1B
-    min-height: 240px
+    animation: lines 5s linear
 
 .title
     @include title
@@ -16,3 +26,11 @@
     @include textLora
     font-size: 17px
     line-height: 24px
+
+@keyframes lines
+    0%
+        clip: rect(0, 0, 2px, 0)
+    50%
+        clip: rect(0, 644px, 2px, 0)
+    100%
+        clip: rect(0, 644px, 240px, 0)

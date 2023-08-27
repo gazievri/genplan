@@ -3,7 +3,7 @@
 .header
     position: absolute
     width: 100%
-    z-index: 1
+    z-index: 15
 
 .wrapper
     width: 100%
@@ -21,5 +21,19 @@
 .list
     display: flex
     gap: 40px
-    
-    
+
+.burger
+    background-image: url('../../assets/icon/burger.svg')
+    background-size: 38.854px 11.064px
+    width: 40px
+    height: 11px
+
+.close
+    background-image: url('../../assets/icon/close.svg')
+    background-size: 28px 28px
+    width: 28px
+    height: 28px
+
+@media screen and (max-width: 500px)
+    .wrapper
+        padding: 24px 24px 0

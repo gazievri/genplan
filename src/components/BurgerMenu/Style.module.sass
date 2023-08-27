@@ -1,0 +1,55 @@
+@import "../../style/@mixins"
+
+.container
+    position: fixed
+    width: 0
+    height: 100%
+    z-index: 10
+    right: 0
+    transition: all 0.3s ease 0s
+    display: flex
+    background-image: url('../../assets/img/bg-hero-mob.png')
+    background-repeat: no-repeat
+    background-size: 100% 100%
+
+.container__opened
+    position: fixed
+    width: 100%
+    height: 100%
+    z-index: 10
+    right: 0px
+    transition: all 0.3s ease 0s
+    display: flex
+    flex-direction: column
+    background-image: url('../../assets/img/bg-hero-mob.png')
+    background-repeat: no-repeat
+    background-size: 100% 100%
+
+.list
+    margin: 271px 0 0
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+.item
+    @include title
+    font-size: 16px
+    line-height: 26px
+    color: #F6F6F7
+    text-align: center
+    width: 100vw
+
+.contacts
+    display: flex
+    width: 193px
+    justify-content: space-between
+    margin: auto auto 40px
+
+.link
+    @include text
+    font-size: 20px
+    line-height: 26px
+    color: #F6F6F7
+
+.link:hover
+    color: #F6F6F7

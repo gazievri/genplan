@@ -8,7 +8,7 @@ interface IProps {
 function InfoCard({ card }: IProps) {
   return (
     <article className={styles.card}>
-      <h3 className={styles.title}>{card.title}</h3>
+      <h3 className={styles.title}>{card.title.toLocaleUpperCase()}</h3>
       <p className={styles.text}>{card.description}</p>
     </article>
   );

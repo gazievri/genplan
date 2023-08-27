@@ -33,7 +33,7 @@ function Footer() {
           <address className={styles.block}>
             <h2 className={styles.title}>
               ПО ВОПРОСАМ:
-              <a href="mailto:egurvich@genplanmos.ru">EGURVICH@GENPLANMOS.RU</a>
+              <a href="mailto:egurvich@genplanmos.ru"> EGURVICH@GENPLANMOS.RU</a>
             </h2>
             <ul className={styles.list_row}>
               <li>

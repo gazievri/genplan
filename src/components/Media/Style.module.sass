@@ -1,0 +1,37 @@
+@import "../../style/@mixins"
+
+.section
+    width: 100%
+    height: 1108px
+
+.wrapper
+    background-image: url('../../assets/img/bg-media.png')
+    background-repeat: no-repeat
+    width: 100%
+    max-width: 1440px
+    margin: 0 auto
+    min-height: 1108px
+    padding-left: 81px
+    padding-top: 88px
+    display: flex
+    flex-direction: column
+    gap: 40px
+    overflow: hidden
+
+.title
+    @include title
+    font-size: 42px
+    line-height: 52px
+
+.card_container
+    display: flex
+    gap: 24px
+
+@media screen and (max-width: 500px)
+    .wrapper
+        padding-left: 25px
+        padding-top: 92px
+
+    .title
+        font-size: 26px
+        line-height: 33.5px

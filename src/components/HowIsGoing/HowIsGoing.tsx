@@ -8,7 +8,7 @@ interface IProps {
 
 function HowIsGoing({ cards }: IProps) {
   return (
-    <section>
+    <section id="howIsGoing" className={styles.section}>
       <h2 className={styles.title}>КАК ПРОХОДИТ</h2>
       <ul className={styles.grid}>
         { cards && cards.map((card) => (

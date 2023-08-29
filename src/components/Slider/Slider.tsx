@@ -45,25 +45,19 @@ function Slider({ cards } : IProps) {
   // Обработчики касания для мобильной версии
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 150) {
-      // do your stuff here for left swipe
-    //   moveSliderRight();
-      alert('move left');
+      handleClickNext();
     }
 
     if (touchStart - touchEnd < -150) {
-      // do your stuff here for right swipe
-    //   moveSliderLeft();
-      alert('move right');
+      handleClickPrev();
     }
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
-    alert('start');
   };
 
-  const handleMoveStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchStart(e.targetTouches[0].clientX);
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
@@ -93,7 +87,7 @@ function Slider({ cards } : IProps) {
         className={styles.window}
         ref={windowRef}
         onTouchStart={(e) => handleTouchStart(e)}
-        onTouchMove={(e) => handleMoveStart(e)}
+        onTouchMove={(e) => handleTouchMove(e)}
         onTouchEnd={() => handleTouchEnd()}
       >
         <div

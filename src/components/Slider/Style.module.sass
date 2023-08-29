@@ -1,0 +1,41 @@
+.container
+    width: 100%
+    height: fit-content
+    position: relative
+
+.window
+    height: 100%
+    width: 100%
+    overflow: hidden
+
+.items
+    height: 100%
+    width: fit-content
+    display: flex
+    gap: 24px
+    transition: translate
+    transition-property: transform
+    transition-duration: 0.5s
+    transition-timing-function: easy-in-out
+
+.arrowPrev
+    background-image: url('../../assets/icon/arrow-left.svg')
+    background-position: center
+    width: 40px
+    height: 18px
+    position: absolute
+    right: 95px
+    top: -49.69px
+
+.arrowNext
+    background-image: url('../../assets/icon/arrow.svg')
+    width: 40px
+    height: 18px
+    background-position: center
+    position: absolute
+    right: 47px
+    top: -49.69px
+
+@media screen and (max-width: 700px)
+    .arrowPrev, .arrowNext
+        // display: none 

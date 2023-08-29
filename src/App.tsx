@@ -6,7 +6,7 @@ import Main from './layout/Main/Main.tsx';
 import Footer from './layout/Footer/Footer.tsx';
 import { getAboutCards, getMediaCards } from './api/api.ts';
 import { MediaCardType } from './types/mediaCard.ts';
-import ToTop from './components/ToTop/ToTop.tsx';
+// import ToTop from './components/ToTop/ToTop.tsx';
 
 function App() {
   const [cards, setCards] = useState<Cards[] | null>(null);
@@ -37,11 +37,9 @@ function App() {
   return (
     <>
       <Header />
-      {
-        cards && mediaCards && <Main cards={cards} mediaCards={mediaCards} />
-      }
+      {cards && mediaCards && <Main cards={cards} mediaCards={mediaCards} />}
       <Footer />
-      <ToTop />
+      {/* <ToTop /> */}
     </>
   );
 }

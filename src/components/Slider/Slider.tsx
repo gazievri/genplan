@@ -9,7 +9,7 @@ interface IProps {
 }
 
 function Slider({ children, quantaty } : IProps) {
-  const windowRef = useRef(null);
+  const windowRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   const [windowSize, setWindowSize] = useState(0);
   const [cardWidth, setCardWidth] = useState(310);
@@ -41,13 +41,13 @@ function Slider({ children, quantaty } : IProps) {
   }, []);
 
   useEffect(() => {
-    if (windowRef) {
+    if (windowRef && windowRef.current) {
       const windowWidth = windowRef.current.offsetWidth;
       const length = quantaty * cardWidth + (quantaty - 1) * 24;
       const dif = length - windowWidth;
       setWindowSize(-dif);
     }
-  }, [cardWidth, quantaty]);
+  }, [cardWidth, quantaty, windowRef]);
 
   return (
     <div className={styles.container}>

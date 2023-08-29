@@ -1,4 +1,4 @@
-import {
+import React, {
   useEffect, useState, useRef,
 } from 'react';
 import styles from './Style.module.sass';
@@ -15,6 +15,9 @@ function Slider({ cards } : IProps) {
   const [windowSize, setWindowSize] = useState(0);
   const [cardWidth, setCardWidth] = useState(310);
   const [activeCard, setActiveCard] = useState(0);
+  // Константы для обработки свайпа
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   const handleClickPrev = () => {
     setActiveCard((currentActiveCard) => {
@@ -39,6 +42,30 @@ function Slider({ cards } : IProps) {
     });
   };
 
+  // Обработчики касания для мобильной версии
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 150) {
+      // do your stuff here for left swipe
+    //   moveSliderRight();
+      alert('move left');
+    }
+
+    if (touchStart - touchEnd < -150) {
+      // do your stuff here for right swipe
+    //   moveSliderLeft();
+      alert('move right');
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleMoveStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
   useEffect(() => {
     const windowQ = window.innerWidth;
     if (windowQ <= 500) {
@@ -61,7 +88,13 @@ function Slider({ cards } : IProps) {
     <div className={styles.container}>
       <button className={styles.arrowPrev} onClick={handleClickPrev} aria-label="Предидущий слайд" type="button" />
       <button className={styles.arrowNext} onClick={handleClickNext} aria-label="Следующий слайд" type="button" />
-      <div className={styles.window} ref={windowRef}>
+      <div
+        className={styles.window}
+        ref={windowRef}
+        onTouchStart={(e) => handleTouchStart(e)}
+        onTouchMove={(e) => handleMoveStart(e)}
+        onTouchEnd={() => handleTouchEnd()}
+      >
         <div
           className={styles.items}
           style={{ transform: `translateX(${offset}px)` }}

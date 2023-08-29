@@ -1,27 +1,46 @@
-# React + TypeScript + Vite
+# Тестовое задание ИНСТИТУТ ГЕНПЛАНА МОСКВЫ
+Проект выполнен в качестве тестового задания для компании ИНСТИТУТ ГЕНПЛАНА МОСКВЫ. 
+С текстом технического задания можно ознакомиться в ссылках к проекту. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Функционал проекта
+В проекте реализованы следующие возможности:
+- адаптивная верстка сайта;
+- получение данных с сервера;
+- слайдер для отображения данных с реализацией свайпа для мобильных устройств.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Наглядно c функционалом проекта можно познакомиться в [видео](https://youtu.be/Ed0WtP7WBp8).
+<img width="1400" alt="genplan" src="https://github.com/gazievri/genplan/assets/96244317/93ffc70b-7ecf-4706-bb9b-5003de908d69">
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Технологический стек
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+При создании проекта использовался следующий стек технологий: HTML, SASS, React.js, TS.
+
+## Работа с проектом
+
+Для запуска проекта, пожалуйста, выполните следующие действия:
+
+1. Склонировать проект на ваш компьютер с помощью команды:
+
+```
+git clone https://github.com/gazievri/genplan.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Установить зависимости:
+
+```
+npm install
+```
+
+3. Запустить проект:
+
+```
+npm run dev
+```
+
+
+## Ссылки проекта
+
+Тестовое задание доступно по [ссылке](https://www.figma.com/file/QQve7kKmyhDEvtcz9lGGRW/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%84%D1%80%D0%BE%D0%BD%D1%82?type=design&node-id=0%3A1&mode=design&t=citDFI6YvBJwS1eH-1).

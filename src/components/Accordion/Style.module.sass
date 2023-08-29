@@ -1,0 +1,38 @@
+@import "../../style/@mixins"
+
+.accordion
+    position: relative
+    border-bottom: 2px solid #1B1B1B
+
+.accordion__last
+    position: relative
+
+.accordion__heading
+    @include title
+    font-size: 22px
+    line-height: 30px
+    color: #1B1B1B
+    cursor: pointer
+
+.accordion__checkbox
+    display: none 
+    position: absolute 
+    left: -9999em
+
+.accordion__checkbox:checked~.accordion__content
+    max-height: 1000px
+    transition: all 1s
+
+.accordion__content
+    max-height: 0
+    max-width: 755px
+    overflow: hidden
+    transition: all 0.5s
+    margin-bottom: 40px
+
+.text
+    @include textLora
+    font-size: 17px
+    line-height: 24px
+    padding-top: 16px
+

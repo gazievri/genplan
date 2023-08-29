@@ -5,6 +5,11 @@
     min-height: 176px
     background-color: #1B1B1B
     color: #FFFFFF
+
+.container
+    max-width: 1440px
+    width: 100%
+    margin: 0 auto
     padding: 40px 116px 40px 64px
 
 .wrapper
@@ -39,4 +44,16 @@
 .text:first-child
     margin-bottom: 8px
 
+@media screen and (max-width: 900px)
+    .container
+        padding: 40px 25px
+
+    .wrapper
+        flex-direction: column
+        gap: 40px
+        align-items: center
+
+    .block
+        max-width: 390px
+        width: 100%
 

@@ -1,0 +1,39 @@
+@import "../../style/@mixins"
+
+.header
+    position: absolute
+    width: 100%
+    z-index: 15
+
+.wrapper
+    width: 100%
+    max-width: 1440px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 18px 56px 0 64px
+    @include text
+    font-size: 19px
+    line-height: 24px
+    color: #F6F6F7
+    margin: 0 auto
+
+.list
+    display: flex
+    gap: 40px
+
+.burger
+    background-image: url('../../assets/icon/burger.svg')
+    background-size: 38.854px 11.064px
+    width: 40px
+    height: 11px
+
+.close
+    background-image: url('../../assets/icon/close.svg')
+    background-size: 28px 28px
+    width: 28px
+    height: 28px
+
+@media screen and (max-width: 500px)
+    .wrapper
+        padding: 24px 24px 0

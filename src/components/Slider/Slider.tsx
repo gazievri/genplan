@@ -19,6 +19,7 @@ function Slider({ cards } : IProps) {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
+  // Обработчик кнопок вперед и назад
   const handleClickPrev = () => {
     setActiveCard((currentActiveCard) => {
       const newActiveCard = currentActiveCard - 1;
@@ -61,6 +62,16 @@ function Slider({ cards } : IProps) {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
+  // Обработчик кнопки по слайду
+  const handleClickSlide = (index: number) => {
+    if (index > activeCard) {
+      handleClickNext();
+    } else if (index < activeCard) {
+      handleClickPrev();
+    }
+    setActiveCard(index);
+  };
+
   useEffect(() => {
     const windowQ = window.innerWidth;
     if (windowQ <= 500) {
@@ -95,7 +106,14 @@ function Slider({ cards } : IProps) {
           style={{ transform: `translateX(${offset}px)` }}
         >
           {cards.map((card, index: number) => (
-            <MediaCard card={card} key={card.id} index={index} activeCard={activeCard} />))}
+            <MediaCard
+              card={card}
+              key={card.id}
+              index={index}
+              activeCard={activeCard}
+              action={(ind: number) => handleClickSlide(ind)}
+            />
+          ))}
         </div>
       </div>
     </div>

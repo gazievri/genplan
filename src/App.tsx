@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import './style/@globals.sass';
 import { useEffect, useState } from 'react';
 import { Cards } from './types/cards.ts';

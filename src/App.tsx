@@ -6,6 +6,7 @@ import Main from './layout/Main/Main.tsx';
 import Footer from './layout/Footer/Footer.tsx';
 import { getAboutCards, getMediaCards } from './api/api.ts';
 import { MediaCardType } from './types/mediaCard.ts';
+import Preloader from './components/Preloader/Preloader.tsx';
 // import ToTop from './components/ToTop/ToTop.tsx';
 
 function App() {
@@ -36,9 +37,15 @@ function App() {
 
   return (
     <>
-      <Header />
-      {cards && mediaCards && <Main cards={cards} mediaCards={mediaCards} />}
-      <Footer />
+      {
+      cards && mediaCards ? (
+        <>
+          <Header />
+          <Main cards={cards} mediaCards={mediaCards} />
+          <Footer />
+        </>
+      ) : <Preloader />
+     }
       {/* <ToTop /> */}
     </>
   );

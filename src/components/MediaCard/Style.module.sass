@@ -9,18 +9,20 @@
     height: 420px
     margin-bottom: 24px
     overflow: hidden
-    filter: grayscale(1)
-
-.container:hover
-    filter: none
-    cursor: grab
-    position: relative
 
 .image
     object-fit: cover
     object-position: center
     height: 100%
     width: 100%
+    filter: grayscale(1)
+
+.image__active
+    object-fit: cover
+    object-position: center
+    height: 100%
+    width: 100%
+    filter: none
 
 .link
     @include title

@@ -2,20 +2,25 @@ import {
   useEffect, useState, useRef,
 } from 'react';
 import styles from './Style.module.sass';
+import MediaCard from '../MediaCard/MediaCard.tsx';
+import type { MediaCardType } from '../../types/mediaCard.ts';
 
 interface IProps {
-    children: any,
-    quantaty: number,
+    cards: MediaCardType[],
 }
 
-function Slider({ children, quantaty } : IProps) {
+function Slider({ cards } : IProps) {
   const windowRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   const [windowSize, setWindowSize] = useState(0);
   const [cardWidth, setCardWidth] = useState(310);
-  const [balance, setBalance] = useState(38);
+  const [activeCard, setActiveCard] = useState(0);
 
   const handleClickPrev = () => {
+    setActiveCard((currentActiveCard) => {
+      const newActiveCard = currentActiveCard - 1;
+      return Math.max(newActiveCard, 0);
+    });
     setOffset((currentOffset) => {
       const newOffset = currentOffset + cardWidth + 24;
       return Math.min(newOffset, 0);
@@ -23,9 +28,14 @@ function Slider({ children, quantaty } : IProps) {
   };
 
   const handleClickNext = () => {
+    setActiveCard((currentActiveCard) => {
+      const newActiveCard = currentActiveCard + 1;
+      return Math.min(newActiveCard, cards.length - 1);
+    });
+
     setOffset((currentOffset) => {
       const newOffset = currentOffset - cardWidth - 24;
-      return Math.max(newOffset, windowSize - balance);
+      return Math.max(newOffset, windowSize);
     });
   };
 
@@ -33,21 +43,19 @@ function Slider({ children, quantaty } : IProps) {
     const windowQ = window.innerWidth;
     if (windowQ <= 500) {
       setCardWidth(269);
-      setBalance(80);
     } else {
       setCardWidth(310);
-      setBalance(38);
     }
   }, []);
 
   useEffect(() => {
     if (windowRef && windowRef.current) {
       const windowWidth = windowRef.current.offsetWidth;
-      const length = quantaty * cardWidth + (quantaty - 1) * 24;
+      const length = cards.length * cardWidth + (cards.length - 1) * 24;
       const dif = length - windowWidth;
       setWindowSize(-dif);
     }
-  }, [cardWidth, quantaty, windowRef]);
+  }, [cardWidth, windowRef]);
 
   return (
     <div className={styles.container}>
@@ -58,7 +66,8 @@ function Slider({ children, quantaty } : IProps) {
           className={styles.items}
           style={{ transform: `translateX(${offset}px)` }}
         >
-          {children}
+          {cards.map((card, index: number) => (
+            <MediaCard card={card} key={card.id} index={index} activeCard={activeCard} />))}
         </div>
       </div>
     </div>

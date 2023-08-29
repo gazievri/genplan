@@ -59,6 +59,7 @@ function Slider({ cards } : IProps) {
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
+    alert('start');
   };
 
   const handleMoveStart = (e: React.TouchEvent<HTMLDivElement>) => {
